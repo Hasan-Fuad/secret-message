@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Love</title>
+        <link rel="stylesheet" href="love_style.css">
+    </head>
+    <body>
+        <h1>
+            Will you go out with me?💘
+        </h1>
+
+        <div class = "buttons">
+            <button id = "yesButton" onclick="clickResponse()">YES 😍</button>
+            <button id = "noButton" onmouseover="moveResponse()">no🥲</button>
+        </div>
+
+        <div id = "whenyes">
+            <div class = "heart">💓</div>
+            <h2> OMG You got me jumping for joy!</h2>
+            <img src = "https://media1.tenor.com/m/PdTRNZztJEQAAAAC/love-loaf.gif" alt = "❤️‍🔥❤️‍🔥❤️‍🔥❤️‍🔥">
+        </div>
+
+        <script>
+            
+            function moveResponse() {
+                const noButton = document.getElementById('noButton');
+                const x = Math.random() * (window.innerWidth -100);
+                const y = Math.random() * (window.innerHeight - 50);
+
+                noButton.style.position = 'absolute';
+                noButton.style.left = x + 'px';
+                noButton.style.top = y + 'px';
+
+                const currentSize = parseFloat(getComputedStyle(noButton).fontSize);
+                noButton.style.fontSize = (currentSize * 0.8) + 'px';
+            }
+
+            function clickResponse(){
+                document.getElementById('whenyes').style.display = 'block';
+                document.querySelector('.buttons').style.display = 'none';
+                document.querySelector('h1').style.display = 'none';
+            }
+        </script>
+    </body>
+</html>
